@@ -43,8 +43,7 @@ class ViewController: UIViewController {
         if let touch = touches.first {
             let currentPoint = touch.location(in: view)
             drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
-            
-            // 7
+
             lastPoint = currentPoint
         }
     }
@@ -54,7 +53,6 @@ class ViewController: UIViewController {
             drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
         }
         
-        // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(primaryImageView.frame.size)
         primaryImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: .normal, alpha: 1.0)
         secondaryImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: .normal, alpha: opacity)
@@ -70,25 +68,20 @@ class ViewController: UIViewController {
 
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         
-        // 1
         UIGraphicsBeginImageContext(view.frame.size)
         let context = UIGraphicsGetCurrentContext()
         secondaryImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
-        // 2
         context?.move(to: CGPoint(x:fromPoint.x, y:fromPoint.y))
         context?.addLine(to: CGPoint(x:toPoint.x, y:toPoint.y))
         
-        // 3
         context?.setLineCap(.round)
         context!.setLineWidth(brushWidth)
         context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
         context?.setBlendMode(.normal)
         
-        // 4
         context?.strokePath()
         
-        // 5
         secondaryImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         secondaryImageView.alpha = opacity
         UIGraphicsEndImageContext()
