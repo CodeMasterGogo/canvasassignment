@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="canvas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-if-cpy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8pU-pn-SRy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyG-OD-gTZ">
+                                <rect key="frame" x="16" y="628" width="38" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TbX-GD-4yu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-Xk-0gJ">
+                                <rect key="frame" x="298" y="628" width="61" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hF-1J-kB1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFu-hN-Ct8">
+                                <rect key="frame" x="168" y="628" width="38" height="30"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5R9-oZ-Iaq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wti-if-cpy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5hO-yI-7jN"/>
+                            <constraint firstItem="8pU-pn-SRy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BEz-iz-1Cd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B1G-Xk-0gJ" secondAttribute="bottom" constant="9" id="Bq4-yi-Axb"/>
+                            <constraint firstItem="Wti-if-cpy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ha0-TB-qhA"/>
+                            <constraint firstItem="fFu-hN-Ct8" firstAttribute="width" secondItem="WyG-OD-gTZ" secondAttribute="width" id="PRQ-ot-t2c"/>
+                            <constraint firstItem="fFu-hN-Ct8" firstAttribute="height" secondItem="WyG-OD-gTZ" secondAttribute="height" id="PWU-W1-SJV"/>
+                            <constraint firstItem="8pU-pn-SRy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TQf-ck-h67"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B1G-Xk-0gJ" secondAttribute="trailing" constant="16" id="WMV-rU-0kh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WyG-OD-gTZ" secondAttribute="bottom" constant="9" id="ZuX-7V-VAf"/>
+                            <constraint firstItem="fFu-hN-Ct8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gyz-wB-ONT"/>
+                            <constraint firstItem="B1G-Xk-0gJ" firstAttribute="width" secondItem="WyG-OD-gTZ" secondAttribute="width" constant="23" id="hzH-pv-8oU"/>
+                            <constraint firstItem="Wti-if-cpy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iCc-FZ-F91"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fFu-hN-Ct8" secondAttribute="bottom" constant="9" id="qUe-Ja-Uld"/>
+                            <constraint firstItem="8pU-pn-SRy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZf-j1-0g7"/>
+                            <constraint firstItem="B1G-Xk-0gJ" firstAttribute="height" secondItem="WyG-OD-gTZ" secondAttribute="height" id="t2Y-cu-gFq"/>
+                            <constraint firstItem="WyG-OD-gTZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wR2-dY-v89"/>
+                            <constraint firstItem="8pU-pn-SRy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xrk-WG-u5i"/>
+                            <constraint firstItem="Wti-if-cpy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yMu-QS-D2b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="primaryImageView" destination="Wti-if-cpy" id="qiL-Ag-f4K"/>
+                        <outlet property="secondaryImageView" destination="8pU-pn-SRy" id="C6W-E9-3Ul"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
