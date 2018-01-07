@@ -88,7 +88,12 @@ class ViewController: UIViewController {
         
     }
     @IBAction func saveBtnPressed(_ sender: Any) {
-        saveImageDocumentDirectory()
+        //save image to document directory
+        //saveImageDocumentDirectory()
+        
+        //save image to photo library
+        let imageData: Data = self.ImageSecquenc.last as! Data
+        UIImageWriteToSavedPhotosAlbum(UIImage(data: imageData)!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     func saveImageDocumentDirectory(){
@@ -115,6 +120,19 @@ class ViewController: UIViewController {
             alertController.addAction(cancelAction)
             
             self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
         }
     }
     
